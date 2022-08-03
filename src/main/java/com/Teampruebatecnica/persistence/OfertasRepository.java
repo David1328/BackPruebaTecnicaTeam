@@ -19,7 +19,6 @@ public class OfertasRepository  implements OfertRepository {
 
     @Override
     public List<Oferta> getAll() {
-        System.out.println("Entro");
         return (List<Oferta>) ofertaCrudReposiry.findAll();
     }
 

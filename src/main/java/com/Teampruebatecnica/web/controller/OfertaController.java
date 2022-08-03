@@ -1,6 +1,7 @@
 package com.Teampruebatecnica.web.controller;
 
 import com.Teampruebatecnica.domain.service.OfertaService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.Teampruebatecnica.persistence.entity.Oferta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/ofertas")
 public class OfertaController {
     @Autowired
@@ -16,7 +18,6 @@ public class OfertaController {
 
     @GetMapping("")
     public List<Oferta> getAll(){
-        System.out.println("Entro service");
         return ofertaService.getAll();
     }
     @GetMapping("/{id}")
